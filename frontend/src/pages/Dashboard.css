@@ -1,0 +1,614 @@
+
+/* =========================================================
+   SUBSCRIPTION AUDITOR — DASHBOARD
+   Black + White + Colorful Accent
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.dashboard {
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 5%;
+  background:
+    radial-gradient(circle at 10% 5%, rgba(99, 102, 241, 0.10), transparent 25%),
+    radial-gradient(circle at 90% 15%, rgba(236, 72, 153, 0.08), transparent 25%),
+    #f6f6f6;
+  color: #111111;
+  font-family:
+    Inter,
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.dashboard-header {
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto 35px;
+  padding: 35px 40px;
+  border-radius: 28px;
+  background: #111111;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-header::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  right: -80px;
+  top: -120px;
+  background: #6366f1;
+  filter: blur(10px);
+  opacity: 0.8;
+}
+
+.dashboard-header::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  right: 150px;
+  bottom: -130px;
+  background: #ec4899;
+  opacity: 0.5;
+}
+
+.dashboard-header > div {
+  position: relative;
+  z-index: 2;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 45px);
+  font-weight: 800;
+  letter-spacing: -1.8px;
+}
+
+.dashboard-header p {
+  margin: 10px 0 0;
+  color: #bdbdbd;
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   SUMMARY CARDS
+   ========================================================= */
+
+.stats-grid {
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto 25px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.stat-card {
+  min-height: 155px;
+  padding: 25px;
+
+  background: #ffffff;
+  border: 1px solid #dedede;
+  border-radius: 22px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.05);
+
+  position: relative;
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.stat-card::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 70px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 0 10px 10px 0;
+  background: #111111;
+}
+
+.stat-card:nth-child(1)::before {
+  background: #6366f1;
+}
+
+.stat-card:nth-child(2)::before {
+  background: #ec4899;
+}
+
+.stat-card:nth-child(3)::before {
+  background: #f59e0b;
+}
+
+.stat-card:nth-child(4)::before {
+  background: #10b981;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.10);
+}
+
+.stat-card span {
+  color: #777777;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.stat-card strong {
+  display: block;
+  margin-top: 10px;
+  color: #111111;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+
+/* =========================================================
+   CHART SECTION
+   ========================================================= */
+
+.charts-grid {
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto 25px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.chart-card {
+  min-height: 380px;
+  background: #ffffff;
+  border: 1px solid #dedede;
+  border-radius: 24px;
+  padding: 28px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.05);
+
+  transition: 0.25s ease;
+}
+
+.chart-card:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.chart-card h2 {
+  margin: 0 0 15px;
+  text-align: center;
+
+  color: #111111;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   TABLE CARDS
+   ========================================================= */
+
+.table-card {
+  width: 100%;
+  max-width: 1450px;
+
+  margin: 0 auto 25px;
+
+  background: #ffffff;
+  border: 1px solid #dedede;
+  border-radius: 24px;
+
+  padding: 28px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.05);
+
+  overflow: hidden;
+}
+
+.table-header {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.table-header h2,
+.table-card > h2 {
+  margin: 0;
+  color: #111111;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.table-header p {
+  margin-top: 7px;
+  color: #888888;
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   TABLE WRAPPER
+   ========================================================= */
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  display: flex;
+  justify-content: center;
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+table {
+  width: 100%;
+  min-width: 850px;
+
+  border-collapse: separate;
+  border-spacing: 0 8px;
+
+  text-align: center;
+}
+
+thead tr {
+  background: #111111;
+  color: #ffffff;
+}
+
+thead th {
+  padding: 15px 12px;
+
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  white-space: nowrap;
+}
+
+thead th:first-child {
+  border-radius: 12px 0 0 12px;
+}
+
+thead th:last-child {
+  border-radius: 0 12px 12px 0;
+}
+
+
+/* TABLE ROW */
+
+tbody tr {
+  background: #fafafa;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+tbody tr:hover {
+  background: #f1f1f1;
+  transform: scale(1.005);
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+tbody td {
+  padding: 15px 12px;
+
+  color: #555555;
+  font-size: 12px;
+
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+
+  vertical-align: middle;
+}
+
+tbody td:first-child {
+  border-left: 1px solid #eeeeee;
+  border-radius: 12px 0 0 12px;
+}
+
+tbody td:last-child {
+  border-right: 1px solid #eeeeee;
+  border-radius: 0 12px 12px 0;
+}
+
+tbody td strong {
+  color: #111111;
+}
+
+
+/* =========================================================
+   FREQUENCY BADGE
+   ========================================================= */
+
+.frequency {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 75px;
+  padding: 7px 12px;
+
+  border-radius: 30px;
+
+  background: #111111;
+  color: #ffffff;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+
+/* =========================================================
+   CONFIDENCE
+   ========================================================= */
+
+.confidence {
+  min-width: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.confidence-bar {
+  width: 60px;
+  height: 7px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+  background: #e3e3e3;
+}
+
+.confidence-fill {
+  height: 100%;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #111111,
+      #6366f1,
+      #ec4899
+    );
+
+  transition: width 0.6s ease;
+}
+
+.confidence span {
+  color: #111111;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   RECENT TRANSACTIONS
+   ========================================================= */
+
+.table-card:last-child {
+  margin-bottom: 40px;
+}
+
+.table-card:last-child > h2 {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.dashboard-empty {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 30px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #ffffff 0%,
+      #eeeeee 100%
+    );
+
+  color: #111111;
+}
+
+.dashboard-empty h2 {
+  font-size: 35px;
+  margin-bottom: 8px;
+}
+
+.dashboard-empty p {
+  color: #777777;
+  max-width: 500px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   NO DATA
+   ========================================================= */
+
+.no-data {
+  text-align: center;
+  padding: 55px 20px;
+}
+
+.no-data h3 {
+  margin-bottom: 5px;
+  color: #111111;
+}
+
+.no-data p {
+  color: #888888;
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .dashboard {
+    padding: 20px 15px 40px;
+  }
+
+  .dashboard-header {
+    padding: 28px 22px;
+    border-radius: 22px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 30px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .stat-card {
+    min-height: 130px;
+    padding: 22px;
+  }
+
+  .stat-card strong {
+    font-size: 28px;
+  }
+
+  .chart-card,
+  .table-card {
+    padding: 20px 15px;
+    border-radius: 20px;
+  }
+
+  .chart-card h2,
+  .table-header h2,
+  .table-card > h2 {
+    font-size: 17px;
+  }
+
+  table {
+    min-width: 800px;
+  }
+
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+.table-wrapper::-webkit-scrollbar {
+  height: 7px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: #eeeeee;
+  border-radius: 20px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #111111;
+  border-radius: 20px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #6366f1;
+}
+
+
+/* =========================================================
+   SMOOTH ANIMATION
+   ========================================================= */
+
+.stat-card,
+.chart-card,
+.table-card,
+tbody tr {
+  animation: fadeUp 0.45s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
