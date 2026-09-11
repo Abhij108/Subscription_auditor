@@ -55,9 +55,3 @@ Users can upload a bank statement in CSV format, and the application analyzes th
 - GitHub
 - VS Code
 
----
-
-
-│           └── api.js
-│
-└── README.md
